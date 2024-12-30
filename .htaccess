@@ -1,0 +1,10 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect requests to index.html if they don't match an existing file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+
+# Optionally prevent directory listing (security measure)
+Options -Indexes
